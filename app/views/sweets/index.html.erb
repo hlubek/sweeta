@@ -1,0 +1,20 @@
+<h1>Recent sweets</h1>
+
+<% form_for(Sweet.new(:user_id => User.first.id, :from => 'Web'), :remote => true) do |f| %>
+  <%= f.text_area :text %><br />
+  <%= f.hidden_field :user_id %><br />
+  <%= f.hidden_field :from %><br />
+  <%= f.submit 'Sweet it' %>
+<% end %>
+
+<hr/>
+
+<div id="sweets">
+<% @sweets.each do |sweet| %>
+  <%= render :partial => 'sweet', :locals => { :sweet => sweet } %>
+<% end %>
+</div>
+
+<br />
+
+<%= link_to 'New Sweet', new_sweet_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Text:</b>
+  <%= @sweet.text %>
+</p>
+
+<p>
+  <b>From:</b>
+  <%= @sweet.from %>
+</p>
+
+
+<%= link_to 'Edit', edit_sweet_path(@sweet) %> |
+<%= link_to 'Back', sweets_path %>

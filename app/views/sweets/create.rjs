@@ -1,0 +1,3 @@
+sweet = render :partial => 'sweet', :locals => { :sweet => @sweet }
+page.insert_html :top, 'sweets', sweet
+page.visual_effect :highlight, 'sweets'
